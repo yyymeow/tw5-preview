@@ -5,3 +5,4 @@ output/
 **/*StoryList.tid
 build*.*
 node_modules/
+package.json
