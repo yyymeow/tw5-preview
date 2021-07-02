@@ -13,24 +13,29 @@ var gulp = require("gulp"),
 * Tasks
 *******************************************************************/
 
-gulp.task("clean", function () {
+function myclean() {
 
 	//empty target
 	return gulp.src(dest, {read: false})
     	.pipe(clean());
-});
+}
 
-gulp.task("build", ["clean"], function () {
+function build() {
+    // copy non-js
+    gulp.src(["src/**", "!**/*.js"])
+	.pipe(gulp.dest(dest));
 
-	// copy non-js
-	gulp.src(["src/**", "!**/*.js"])
-		.pipe(gulp.dest(dest));
+    const options = {
+	compress: true,
+	output: {
+	    comments: "some"
+	}
+    }
 
-	// uglify js
-	gulp.src("src/**/*.js")
-		.pipe(uglify({ compress: false, preserveComments: "some" }))
-		.pipe(gulp.dest(dest));
-});
+    // uglify js
+    return gulp.src("src/**/*.js")
+	.pipe(uglify(options))
+	.pipe(gulp.dest(dest));
+}
 
-gulp.task("default", ["clean", "build"], function () {
-})
+exports.build = gulp.series(myclean, build);

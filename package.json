@@ -1,0 +1,25 @@
+{
+  "name": "tw5-preview",
+  "version": "1.0.0",
+  "description": "tobibeer/preview [![flattr me](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=beertobias&url=https://github.com/tobibeer/tw5-preview&title=preview plugin for TiddlyWiki by tobibeer&language=JavaScript&tags=github&category=software)\r =================",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobibeer/tw5-preview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tobibeer/tw5-preview/issues"
+  },
+  "homepage": "https://github.com/tobibeer/tw5-preview#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8"
+  }
+}
